@@ -1,0 +1,218 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('./img/mathBackground.svg');
+  background-position: center;
+  background-size: cover;
+}
+
+.calculator {
+  width: 400px;
+  border-radius: 12px;
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* Display */
+.calculator-display {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 12px 12px 0 0;
+}
+
+.calculator-display h1 {
+  margin: 0;
+  padding: 45px;
+  font-size: 45px;
+  font-family: 'Lucida Console', sans-serif;
+  font-weight: 100;
+  overflow-x: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.5) rgba(255, 255, 255, 0.3);
+  scrollbar-width: thin;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Buttons */
+.calculator-buttons {
+  background: whitesmoke;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 12px;
+  padding: 20px;
+  border-radius: 0 0 12px 12px;
+}
+
+button {
+  min-height: 50px;
+  font-weight: 100;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  border-radius: 8px;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+/* button:hover {
+  filter: brightness(110%);
+} */
+
+button:focus {
+  outline: none;
+}
+
+.operator {
+  appearance: button;
+  background-color: #272626;
+  border: 1px solid #000;
+  border-radius: 8px;
+  box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  min-height: 50px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.operator:focus {
+  text-decoration: none;
+}
+
+.operator:hover {
+  text-decoration: none;
+}
+
+.operator:active {
+  box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
+  outline: 0;
+}
+
+.operator:not([disabled]):active {
+  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+
+.clear {
+  background: rgb(218, 39, 39);
+  appearance: button;
+  border: 1px solid #000;
+  border-radius: 8px;
+  box-shadow: rgb(252, 100, 100) 4px 4px 0 0, #000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 20px;
+  overflow: visible;
+  min-height: 50px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.clear:focus {
+  text-decoration: none;
+}
+
+.clear:hover {
+  filter: brightness(110%);
+  text-decoration: none;
+}
+
+.clear:active {
+  box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
+  outline: 0;
+}
+
+.clear:not([disabled]):active {
+  box-shadow: rgb(252, 100, 100) 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+
+.equal-sign {
+  grid-column: -2;
+  grid-row: 2 / span 5;
+  background: rgb(24, 172, 80);
+  box-shadow: rgb(151, 255, 191) 4px 4px 0 0, #000 4px 4px 0 1px;
+  margin-left: 6px;
+}
+
+.equal-sign:focus {
+  text-decoration: none;
+}
+
+.equal-sign:hover {
+  filter: brightness(110%);
+  text-decoration: none;
+}
+
+.equal-sign:active {
+  box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
+  outline: 0;
+}
+
+.equal-sign:not([disabled]):active {
+  box-shadow: rgb(151, 255, 191) 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+
+/* Media Query: Large Smartphone (Vertical) */
+@media screen and (max-width: 600px) {
+  .calculator {
+    width: 90%;
+  }
+}
